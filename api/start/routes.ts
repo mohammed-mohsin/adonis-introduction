@@ -19,7 +19,18 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import TestsController from 'App/Controllers/Http/TestsController'
 
-Route.get('/', async ({ view }) => {
-  return view.render('welcome')
+
+// typical 
+Route.get('/typical_routing', () => {
+  return 'Typical Routing '
 })
+
+
+// using controller methods to
+Route.get('/test', 'TestsController.test')
+
+
+// Dynamic Route using controller methods to
+Route.get('/test/:username', 'TestsController.testDynamicRoute')
