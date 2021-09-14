@@ -23,14 +23,39 @@ import TestsController from 'App/Controllers/Http/TestsController'
 
 
 // typical 
-Route.get('/typical_routing', () => {
-  return 'Typical Routing '
-})
+// Route.get('/typical_routing', () => {
+//   return 'Typical Routing '
+// })
 
 
-// using controller methods to
-Route.get('/test', 'TestsController.test')
+// // using controller methods to
+// Route.get('/test', 'TestsController.test')
 
 
-// Dynamic Route using controller methods to
-Route.get('/test/:username', 'TestsController.testDynamicRoute')
+// // Dynamic Route using controller methods to
+// Route.get('/test/:username', 'TestsController.testDynamicRoute')
+
+
+
+// get method
+
+Route.get("/getTodoLists","TodoListsController.getAllToDo")
+
+// get single item 
+Route.get("/getSingleListItem/:id","TodoListsController.getSingleListItem")
+
+// Create item 
+Route.get("/createListItem","TodoListsController.createListItem")
+
+
+// Update item 
+Route.get("/updateListItem","TodoListsController.updateListItem")
+
+
+
+// delete list item 
+Route.get("/deleteListItem","TodoListsController.deleteListItem")
+
+
+// deleteCompleteTask list item 
+Route.get("/deleteCompleteTask","TodoListsController.deleteCompleteTask")
